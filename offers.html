@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bismi Supermarket</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="image/Logo/Bismi-06.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>
+   
+</head>
+  <body>
+    <nav class="navbar navbar-expand-lg " >
+        <div class="container">
+          <a class="navbar-brand" href="#">Bismi</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span ><i class="ri-database-2-fill"></i></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link "  href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="items.html">Items</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="offers.html">Offers</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#organic">Organic</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contactus">Contact Us</a>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <input class="px-2 search" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn0" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+      <section class="offer">
+        <div class="slider py-5">
+
+
+            <div class="list col-lg-4">
+    
+                <div class="item">
+                    <img src="./image/Offers/5.jpg" alt="">
+    
+                    <!--<div class="content">
+                        <div class="title">MAGIC SLIDER</div>
+                        <div class="type">NATURE</div>
+                        <div class="description">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti temporibus quis eum consequuntur voluptate quae doloribus distinctio. Possimus, sed recusandae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, aut.
+                        </div>
+                        <div class="button">
+                            <button>SEE MORE</button>
+                        </div>
+                    </div>-->
+                </div>
+    
+                <div class="item">
+                    <img src="./image/Offers/6.jpeg" alt="">
+    
+                    
+                </div>
+    
+                <div class="item">
+                    <img src="./image/Offers/7.jpeg" alt="">
+    
+                    <div class="content">
+                        
+                    </div>
+                </div>
+    
+                <div class="item">
+                    <img src="./image/Offers/8.jpeg" alt="">
+    
+                    <div class="content">
+                        
+                    </div>
+                </div>
+    
+            </div>
+    
+    
+            <div class="thumbnail">
+    
+                <div class="item">
+                    <img src="./image/Offers/5.jpg" alt="">
+                </div>
+                <div class="item">
+                    <img src="./image/Offers/6.jpeg" alt="">
+                </div>
+                <div class="item">
+                    <img src="./image/Offers/7.jpeg" alt="">
+                </div>
+                <div class="item">
+                    <img src="./image/Offers/8.jpeg" alt="">
+                </div>
+    
+            </div>
+    
+    
+            <div class="nextPrevArrows">
+                <button class="prev"> < </button>
+                <button class="next"> > </button>
+            </div>
+    
+    
+        </div>
+    
+    
+    
+    
+    
+        <script>            
+            let nextBtn = document.querySelector('.next')
+            let prevBtn = document.querySelector('.prev')
+
+            let slider = document.querySelector('.slider')
+            let sliderList = slider.querySelector('.slider .list')
+            let thumbnail = document.querySelector('.slider .thumbnail')
+            let thumbnailItems = thumbnail.querySelectorAll('.item')
+
+            thumbnail.appendChild(thumbnailItems[0])
+
+            // Function for next button 
+            nextBtn.onclick = function() {
+                moveSlider('next')
+            }
+
+
+            // Function for prev button 
+            prevBtn.onclick = function() {
+                moveSlider('prev')
+            }
+
+
+            function moveSlider(direction) {
+                let sliderItems = sliderList.querySelectorAll('.item')
+                let thumbnailItems = document.querySelectorAll('.thumbnail .item')
+                
+                if(direction === 'next'){
+                    sliderList.appendChild(sliderItems[0])
+                    thumbnail.appendChild(thumbnailItems[0])
+                    slider.classList.add('next')
+                } else {
+                    sliderList.prepend(sliderItems[sliderItems.length - 1])
+                    thumbnail.prepend(thumbnailItems[thumbnailItems.length - 1])
+                    slider.classList.add('prev')
+                }
+
+
+                slider.addEventListener('animationend', function() {
+                    if(direction === 'next'){
+                        slider.classList.remove('next')
+                    } else {
+                        slider.classList.remove('prev')
+                    }
+                }, {once: true}) // Remove the event listener after it's triggered once
+            }
+
+        </script>
+      </section>
+
+
+      <section class="product">
+        <div class="container py-5">
+            <div class="row py-5 ">
+                <div class="col-lg-5 m-auto text-center">
+                    <h1>Trending</h1>
+                    <h6 style="color: rgb(64, 144, 11)">Order your products in offer prices</h6>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-2 text-center">
+                    <div class="card border-0 bg-light mb-2">
+                        <div class="card-body">
+                            <img src="./Image/drinks/3.jpeg" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                    <h6 style="color: rgb(64, 144, 11);">Pepsi</h6>
+                    <p>₹25.00</p>
+                </div>
+                <div class="col-lg-2 text-center">
+                    <div class="card border-0 bg-light mb-2">
+                        <div class="card-body">
+                            <img src="./Image/Fruits/Mango.jpeg" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                    <h6 style="color: rgb(64, 144, 11);">Mango</h6>
+                    <p>₹45.00</p>
+                </div>
+                <div class="col-lg-2 text-center">
+                    <div class="card border-0 bg-light mb-2">
+                        <div class="card-body">
+                            <img src="./Image/School/pen 1.jpeg" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                    <h6 style="color: rgb(64, 144, 11);">Pen</h6>
+                    <p>₹5.00</p>
+                </div>
+                <div class="col-lg-2 text-center">
+                    <div class="card border-0 bg-light mb-2">
+                        <div class="card-body">
+                            <img src="./Image/Vegitables/Greenchilli.jpeg" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                    <h6 style="color: rgb(64, 144, 11);">Green chily</h6>
+                    <p>₹20.00</p>
+                </div>
+                <div class="col-lg-2 text-center">
+                    <div class="card border-0 bg-light mb-2">
+                        <div class="card-body">
+                            <img src="./Image/washing/Hachi VietNam.jpeg" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                    <h6 style="color: rgb(64, 144, 11);">Hand Wash Hachi</h6>
+                    <p>₹125.00</p>
+                </div>
+                <div class="col-lg-2 text-center">
+                    <div class="card border-0 bg-light mb-2">
+                        <div class="card-body">
+                            <img src="./Image/snacks/oreo 25.png" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                    <h6 style="color: rgb(64, 144, 11);">Oreo Biscut</h6>
+                    <p>₹25.00</p>
+                </div>                
+            </div>
+            <div class="row">
+                <div class="col-lg-6 text-center m-auto">
+                    <button class="btn1">Click For More</button>
+                </div>
+            </div>
+        </div>
+      </section>
+
+      <section class="about" id="organic">
+        <div class="container py-5">
+            <div class="row py-5">
+                <div class="col-lg-8 m-auto text-center">
+                    <h1>Welcome to our Super Market</h1>
+                    <h6 style="color: rgb(64, 144, 11)">Order your products in offer prices</h6>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <img src="./Image/Head/quality.jpg" class="img-fluid mb-3" alt="">
+                        <h5>Quality Service</h5>
+                        <p>Did you know that 96% of customers consider customer service a key factor when deciding to stay loyal to a brand?
+
+                            Happy customers stay loyal and tend to make repeat purchases with the same company. This leads to an increase in overall sales.</p>
+                    </div>
+                    <div class="col-lg-4">
+                        <img src="./Image/Head/family.jpg" class="img-fluid mb-3" alt="">
+                        <h5>Family Shopping Experience</h5>
+                        <p>A World of Convenience
+                            Experience a market place like no other! Redefining the customer experience in the age of convenience, get all your daily needs sorted - all under one roof.</p>
+                    </div>
+                    <div class="col-lg-4">
+                        <img src="./Image/Head/fresh.jpg" class="img-fluid mb-3" alt="">
+                        <h5>Fresh Food</h5>
+                        <p>Our food is made in a kitchen and not in a laboratory. When you bring home Bismi Fresh, you bring food that’s healthy, wholesome and preservative-free</p>
+                    </div>
+                </div>
+                <div class="row pt-3">
+                    <div class="col-lg-6 text-center m-auto">
+                        <button class="btn1">Shop More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </section>
+
+
+      <section class="contact py-5">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-lg-5 m-auto text-center">
+                    <h1>Contact Us</h1>
+                    <h6 style="color: rgb(64, 144, 11)"> Always Be in Touch With Us</h6>
+                </div>
+            </div>
+            <div class="row py-5">
+                <div class="col-lg-9 m-auto">
+                    <div class="row">
+                        <div class="col-lg-4">
+                             <h6>Location</h6>
+                             <p>South Arayancode, Mavoor PO, Pin:673661</p>
+                        
+                            <h6>Phone</h6>
+                            <a href="tel:+917012058100"><p>+917012058100</p></a>
+                        
+                            <h6>Email</h6>
+                            <a href="mailto:ameer.muhsin100@gmail.com"><p>ameer.muhsin100@gmail.com</p></a>
+                        </div>
+                        <div class="col-lg-7">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control bg-light" placeholder="First Name">
+                                </div>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control bg-light" placeholder="Last Name">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 py-3">
+                                    <textarea class="form-control bg-light" placeholder="Enter your Address "  cols="10" rows="5" >
+
+                                    </textarea>
+                                </div>
+                            </div>
+                            <button class="btn1 mt-3"> More From Us </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </section>
+
+      <section class="news py-5">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-lg-9 m-auto text-center">
+                    <h1>Join Our Society</h1>
+                    <input type="text" class="px-3" placeholder="Enter Your Email" >
+                    <button class="btn2"> Submit </button>
+                </div>
+            </div>
+            <div class="row pt-5">
+                <div class="col-lg-11 m-auto">
+                    <div class="row">
+                        <div class="col-lg-3 py-3">
+                            <h5 class="pb-3">CUSTOMER CARE</h5>
+                            <p>Regular</p>
+                            <p>Always Care</p>
+                            <p>On Time</p>
+                        </div>
+                        <div class="col-lg-3 py-3">
+                            <h5 class="pb-3">CUSTOMER CARE</h5>
+                            <p>Regular</p>
+                            <p>Always Care</p>
+                            <p>On Time</p>
+                        </div>
+                        <div class="col-lg-3 py-3">
+                            <h5 class="pb-3">CUSTOMER CARE</h5>
+                            <p>Regular</p>
+                            <p>Always Care</p>
+                            <p>On Time</p>
+                        </div>
+                        <div class="col-lg-3 py-3">
+                            <h5 class="pb-3" id="contactus">CUSTOMER CARE</h5>
+                            <span><i class="ri-facebook-fill"></i></span>
+                            <span><i class="ri-whatsapp-fill"></i></span>   
+                            <span><i class="ri-instagram-fill"></i></span>       
+                            <span><i class="ri-twitter-fill"></i></span>                  
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <p class="text-center"> Copyright © 2024 Web Design Mastery. All rights reserved.</p>
+        </div>
+      </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>
